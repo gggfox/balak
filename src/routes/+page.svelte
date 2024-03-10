@@ -136,6 +136,6 @@
 			</Container>
 		</div>
 	
-		<GoogleMap class='flex flex-col justify-center items-center h-[35%]'/>
+		<GoogleMap />
 	</section>
 </section>
