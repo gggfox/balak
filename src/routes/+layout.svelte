@@ -1,17 +1,18 @@
-<script>
-	import Header from './Header.svelte';
+<script lang='ts'>
 	import './styles.css';
+	import getI18nStore from "./i18n";
+  	import { setContext, getContext } from "svelte";
+  	setContext('i18n', getI18nStore());
+	const i18n = getContext("i18n");
 </script>
 
 <div class="app">
-	<Header />
-
 	<main>
 		<slot />
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>	 {$i18n.t('avisoDePrivacidad')}</p>
 	</footer>
 </div>
 
@@ -28,9 +29,8 @@
 		flex-direction: column;
 		padding: 1rem;
 		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
+	
+	
 	}
 
 	footer {
